@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Form Values</title>
+    <script type="text/javascript">
+        function getFormValues() {
+            // Get the values of the first and last name fields
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+
+            // Display the values
+            console.log("First Name: " + firstName);
+            console.log("Last Name: " + lastName);
+			alert("Form submitted!");
+        }
+    </script>
+</head>
+<body>
+    <h2>Form to Get First & Last Name</h2>
+    <form>
+        First name: <input type="text" id="firstName" name="firstName"><br><br>
+        Last name: <input type="text" id="lastName" name="lastName"><br><br>
+        <button type="button" onclick="getFormValues()">Submit</button>
+		<form name="frm" method="get" action="success.html">
+    </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Validation Example</h2>
+    <form id="nameForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+        <button type="submit">Submit</button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            var firstName = document.getElementById('firstName').value.trim();
+            var lastName = document.getElementById('lastName').value.trim();
+            var message = document.getElementById('message');
+
+            var alphaRegex = /^[A-Za-z]+$/;
+
+            if (!alphaRegex.test(firstName) || !alphaRegex.test(lastName)) {
+                message.textContent = 'Please enter valid first and last names with alphabetic characters only.';
+                message.className = 'error';
+            } else {
+                message.textContent = 'Form submitted successfully! First Name: ' + firstName + ', Last Name: ' + lastName;
+                message.className = 'success';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+<title>Password Validation</title>
+</head>
+<body>
+    <h2>Password Validation</h2>
+    <form id="loginForm" onsubmit="return validatePassword()">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter your password"><br>
+        <p id="passwordError" style="color: red;"></p>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var errorElement = document.getElementById("passwordError");
+            errorElement.textContent = "";
+
+            // Minimum length validation
+            if (password.length < 8) {
+                errorElement.textContent = "Password must be at least 8 characters long.";
+                return false;
+            }
+
+            // Additional validation rules (e.g., at least one uppercase letter, one lowercase letter, and one digit)
+            var upperCaseLetters = /[A-Z]/g;
+            if (!password.match(upperCaseLetters)) {
+                errorElement.textContent = "Password must contain at least one uppercase letter.";
+                return false;
+            }
+
+            var lowerCaseLetters = /[a-z]/g;
+            if (!password.match(lowerCaseLetters)) {
+                errorElement.textContent = "Password must contain at least one lowercase letter.";
+                return false;
+            }
+
+            var numbers = /[0-9]/g;
+            if (!password.match(numbers)) {
+                errorElement.textContent = "Password must contain at least one number.";
+                return false;
+            }
+
+            // If all validations pass
+			alert("Password validated successfully!");
+            return true;
+        }
+    </script>
+</body>
+</html>

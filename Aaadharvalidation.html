@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Mobile Number and Aadhaar Card Number Validation</title>
+</head>
+ <style>
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+<body>
+    <h2>Mobile Number & Aadhar Card Number Validation</h2>
+    
+    <h3>Validate Mobile Number</h3>
+    <label for="mobileNumber">Mobile Number:</label><br>
+    <input type="text" id="mobileNumber" placeholder="Enter your mobile number">
+    <button onclick="validateMobileNumber()">Validate Mobile Number</button>
+    <p id="mobileValidationResult"></p>
+
+    <h3>Validate Aadhaar Card Number</h3>
+    <label for="aadhaarNumber">Aadhaar Card Number:</label><br>
+    <input type="text" id="aadhaarNumber" placeholder="Enter your Aadhaar card number">
+    <button onclick="validateAadhaarNumber()">Validate Aadhaar Card Number</button>
+    <p id="aadhaarValidationResult"></p>
+
+    <script>
+        function validateMobileNumber() {
+            var mobileNumber = document.getElementById("mobileNumber").value;
+            // Regular expression for Indian mobile numbers (10 digits starting with 7, 8, or 9)
+            var mobilePattern = /^[789]\d{9}$/;
+
+            if (mobilePattern.test(mobileNumber)) {
+                document.getElementById("mobileValidationResult").textContent = mobileNumber + " is a valid mobile number.";
+            } else {
+                document.getElementById("mobileValidationResult").textContent = mobileNumber + " is not a valid mobile number.";
+            }
+        }
+
+        function validateAadhaarNumber() {
+            var aadhaarNumber = document.getElementById("aadhaarNumber").value;
+            // Regular expression for Indian Aadhaar card number (12 digits)
+            var aadhaarPattern = /^\d{12}$/;
+
+            if (aadhaarPattern.test(aadhaarNumber)) {
+                document.getElementById("aadhaarValidationResult").textContent = aadhaarNumber + " is a valid Aadhaar number.";
+            } else {
+                document.getElementById("aadhaarValidationResult").textContent = aadhaarNumber + " is not a valid Aadhaar number.";
+            }
+        }
+    </script>
+</body>
+</html>

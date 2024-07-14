@@ -1,0 +1,307 @@
+<html>
+<head>
+
+<title>Sample Registration Form with Javascript Validations</title> <script language="javascript" type="text/javascript"> function validate()
+
+{
+if (document.frm.user.value == "")
+{
+alert("Please enter the Name");
+document.frm.user.focus();
+return false;
+}
+
+if (document.frm.age.value == "")
+{
+alert("Please select the Age");
+document.frm.age.focus();
+return false;
+}
+if ((document.frm.s1[0].checked == false) && (document.frm.s1[1].checked == false))
+{
+alert("Please select the Gender");
+
+
+
+ 
+return false;
+}
+if (document.frm.email.value == "")
+{
+alert("Please enter the email");
+document.frm.email.focus();
+return false;
+}
+if (document.frm.pass.value == "")
+{
+alert("Please enter the Password");
+document.frm.pass.focus();
+return false;
+}
+
+if ((document.frm.pass.length< 7) && (document.frm.pass.length> 15))
+
+{
+alert("Password Should be of length between 7 to 15");
+document.frm.pass.focus();
+return false;
+}
+if (document.frm.phone.value == "")
+
+{
+alert("Please enter the Phone Number");
+document.frm.phone.focus();
+return false;
+}
+if (document.frm.address.value == "")
+{
+alert("Please enter the Address");
+document.frm.address.focus();
+return false;
+}
+if (document.frm.city.value == "")
+{
+alert("Please enter the city");
+document.frm.city.focus();
+return false;
+}
+if (document.frm.state.value == "")
+{
+alert("Please enter the state");
+
+document.frm.state.focus();
+return false;
+}
+
+if (document.frm.country.value == "")
+{
+alert("Please select the Country");
+document.frm.country.focus();
+return false;
+
+
+
+ 
+}
+if (document.frm.agree.checked == "")
+{
+alert("Select terms and conditions check box");
+return false;
+}
+else
+{
+return true;
+}
+}
+function Numchk(num)
+{
+if (isNaN(num.value))
+{
+
+alert('Entered Value:"' +num.value+ '" has invalid characters. Field accepts only numeric characters');
+
+num.value = "";
+}
+}
+function charchk(char)
+{
+var letters = /^[A-Za-z]+$/;
+if(!char.value.match(letters))
+{
+
+alert('Entered Value:"' +char.value+ '" has invalid characters. Field accepts only alphabet characters');
+char.value = "";
+}
+}
+</script>
+</head>
+<body bgcolor="pink">
+<form name="frm" method="get" action="success.html">
+
+<table width="590" align="center" cellpadding="1" cellspacing="1"> <tr>
+
+<td colspan="3" bgcolor="#2267c6" height=40px style="text-align: center;">REGISTRATION
+FORM</td>
+</tr>
+<tr>
+<td colsspan="3" height=20px><font color=red>*</font> Indicates Require Field</td>
+</tr><br><br>
+<tr>
+
+<td>Name<font color="red">*</font>
+</td>
+<tdalign="center">
+
+</td>
+<td>
+<input type="text" name="user" title="Name" id="txtUser" onKeyUp="charchk(this)">
+</td>
+</tr>
+
+
+
+ 
+<tr>
+<td height="5px"></td>
+</tr>
+
+<tr>
+<td>Age<font color="red">*</font>
+</td>
+<tdalign="center">
+</td>
+<td>
+
+<select size="1" name="age" style="width: 50%;"> <option value="">---Please Select--</option> <option value="20">20</option> <option value="21">21</option>
+
+<option value="22">22</option>
+
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+</select>
+</td>
+</tr>
+<tr>
+<td height="5px;"></td>
+</tr>
+<tr>
+<td>Gender<font color="red">*</font>
+</td>
+<tdalign="center"></td>
+<td>
+<input type="radio" name="s1" value="Yes">Male
+
+<input type="radio" name="s1" value="No">Female
+</td>
+</tr>
+<tr>
+<td height=5px></td>
+</tr>
+<tr>
+<td height=5px></td>
+</tr>
+<tr>
+
+<td>Email<font color="red">*</font>
+</td>
+
+<tdalign="center">:</td>
+<td>
+<input type="email" name="email" title="Email">
+</td>
+</tr>
+
+
+
+ 
+<tr>
+<td height=5px></td>
+</tr>
+<tr>
+<td class="headsubtitle">Password<font color="red">*</font>
+</td>
+<tdalign="center"></td>
+<td>
+<input type="password" name="pass" title="password">
+</td>
+</tr>
+<tr>
+<td style="height:5px"></td>
+</tr>
+<tr>
+
+<td>Contact Number<font color="red">*</font>
+</td>
+<tdalign="center"></td>
+<td>
+<input type="text" name="phone" title="Phone" onKeyUp="Numchk(this)">
+</td>
+</tr>
+<tr>
+
+<td>Contact Address<font color="red ">*</font> </td>
+
+<tdalign="center" valign="middle"></td>
+<td>
+
+<textarea rows="2" cols="35" name="address" style="width: 53%;"></textarea>
+</td>
+</tr>
+<tr>
+<td>City/Town<font color="red ">*</font>
+</td>
+<tdalign="center"></td>
+
+<td>
+<input type="text " name="city" title="city"onKeyUp="charchk(this)">
+</td>
+</tr>
+<tr>
+<td height=5px></td>
+</tr>
+
+<tr>
+<td>State<font color="red">*</font>
+</td>
+
+<tdalign="center"></td>
+<td>
+<input type="text" name="state" title="state" onKeyUp="charchk(this)">
+</td>
+</tr>
+
+
+
+ 
+<tr>
+<td height=5px></td>
+</tr>
+<tr>
+<td>Country<font color="red">*</font>
+</td>
+</td>
+<tdalign="center "></td>
+<td>
+
+<select size="1" name="country" style="width: 53%;"> <option value="">---Please Select--</option> <option value="Australia ">Australia</option> <option value="india ">india</option> <option value="italy ">italy</option>
+
+<option value="ireland ">ireland</option>
+
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<input type="checkbox" name="agree"> I agree terms and conditions
+</td>
+<tr>
+</tr>
+<tr>
+
+
+
+</tr>
+<tr>
+<td height=10px></td>
+</tr>
+<tr>
+                <td align="center" colspan="3">
+                    <input type="submit" name="add" value="Submit" onClick="return validate();">
+                    <input type="reset" name="reset" value="Clear">
+                </td>
+</tr>
+<td id="footer" name= "footers" colspan="6" bgcolor=green align=right></td>
+</tr>
+</table>
+</form>
+</body>
+<script>
+
+document.getElementById("footer").innerHTML = "Current Date & Time" + new
+
+Date().toLocaleString();
+</script>
+</html>

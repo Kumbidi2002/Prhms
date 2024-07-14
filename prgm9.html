@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Window and Screen Resolution</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    div {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+    <h2>Window and Screen Resolution</h2>
+
+    <div>
+        <h3>Window Resolution</h3>
+        <p id="windowResolution"></p>
+    </div>
+
+    <div>
+        <h3>Screen Resolution</h3>
+        <p id="screenResolution"></p>
+    </div>
+
+    <script>
+        function getWindowResolution() {
+            var width = window.innerWidth
+                || document.documentElement.clientWidth
+                || document.body.clientWidth;
+
+            var height = window.innerHeight
+                || document.documentElement.clientHeight
+                || document.body.clientHeight;
+
+            return { width: width, height: height };
+        }
+
+        function getScreenResolution() {
+            var width = window.screen.width;
+            var height = window.screen.height;
+
+            return { width: width, height: height };
+        }
+
+        // Display window resolution
+        var windowRes = getWindowResolution();
+        document.getElementById("windowResolution").textContent = `Width: ${windowRes.width}px, Height: ${windowRes.height}px`;
+
+        // Display screen resolution
+        var screenRes = getScreenResolution();
+        document.getElementById("screenResolution").textContent = `Width: ${screenRes.width}px, Height: ${screenRes.height}px`;
+    </script>
+</body>
+</html>

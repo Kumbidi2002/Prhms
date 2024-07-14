@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Volume Calculator</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        }
+        input[type="number"] {
+           
+        }
+        button {
+            background-color:green;
+            
+        }
+        p {
+        
+        }
+    </style>
+</head>
+<body>
+    <h2>Volume Calculator</h2>
+    <form id="volumeForm">
+        <h3>Sphere</h3>
+        <label for="sphereRadius">Radius:</label>
+        <input type="number" id="sphereRadius" name="sphereRadius" placeholder="Enter radius">
+
+        <h3>Rectangle</h3>
+        <label for="rectLength">Length:</label>
+        <input type="number" id="rectLength" name="rectLength" placeholder="Enter length">
+        <label for="rectWidth">Width:</label>
+        <input type="number" id="rectWidth" name="rectWidth" placeholder="Enter width">
+        <label for="rectHeight">Height:</label>
+        <input type="number" id="rectHeight" name="rectHeight" placeholder="Enter Height">
+
+        <h3>Square</h3>
+        <label for="squareSide">Side Length:</label>
+        <input type="number" id="squareSide" name="squareSide" placeholder="Enter side length">
+
+        <br><br>
+        <button type="button" onclick="calculateVolumes()">Calculate</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script src="volume.js"></script>
+</body>
+</html>
